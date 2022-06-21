@@ -55,9 +55,7 @@ vyos.vyos               2.6.0
 ## Test the 'test_ee_image' Image
 ```shell
 ansible-runner run --process-isolation demo -p test.yml --container-image test_ee_image:latest
-
-ansible-runner run --process-isolation . -p asd.yml --container-volume-mount .:/runner/project --container-image vmware-ee-image:latest
-
+cd demo/
 ansible-runner run --process-isolation . --container-volume-mount .:/runner/project --container-image vmware-ee-image:latest -p test.yml --cmdline "--extra-vars 'drmon_api=http://185.81.165.121:9989'"
 ```
 

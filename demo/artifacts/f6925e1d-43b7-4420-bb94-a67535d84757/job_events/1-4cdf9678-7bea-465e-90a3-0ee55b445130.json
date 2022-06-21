@@ -1,1 +1,0 @@
-{"event": "verbose", "uuid": "4cdf9678-7bea-465e-90a3-0ee55b445130", "counter": 1, "stdout": "Error: initializing source docker://akbank_test_ee_image:latest: reading manifest latest in docker.io/library/akbank_test_ee_image: errors:", "start_line": 0, "end_line": 1, "runner_ident": "f6925e1d-43b7-4420-bb94-a67535d84757", "created": "2022-05-31T15:23:14.152773"}

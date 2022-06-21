@@ -1,4 +1,0 @@
-Error: initializing source docker://akbank_test_ee_image:latest: reading manifest latest in docker.io/library/akbank_test_ee_image: errors:
-denied: requested access to the resource is denied
-unauthorized: authentication required
-

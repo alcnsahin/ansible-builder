@@ -2,10 +2,14 @@
 version: 1.0.0
 
 build_arg_defaults:
-  EE_BASE_IMAGE: 'registry.redhat.io/ansible-automation-platform-21/ee-supported-rhel8:1.0.1-82'
+  EE_BASE_IMAGE: 'registry.redhat.io/ansible-automation-platform-21/ee-supported-rhel8:latest'
 
 #ansible_config: 'ansible.cfg'
 
 dependencies:
   galaxy: requirements.yml
   python: requirements.txt
+
+additional_build_steps:
+  prepend: |
+    RUN pip3 install --upgrade pip setuptools

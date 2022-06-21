@@ -1,6 +1,5 @@
 ---
 collections:
-  - name: azure.azcollection
   - name: awx.awx
   - name: community.vmware
   - name: community.routeros

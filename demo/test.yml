@@ -1,0 +1,20 @@
+- name: get jwtoken from drmon
+  hosts: all
+  tasks:
+    - name: get token
+      uri:
+        url: "{{ drmon_api }}/login"
+        method: POST
+        body_format: json
+        body: '{ "username": "admin", "password": "K0nsalt" }'
+        force_basic_auth: no
+        validate_certs: False
+      register: content
+      until: content.status == 200
+    - name: print token
+      debug:
+        msg: "{{ content.json.token }}"
+    - name: set the token var as global
+      set_stats:
+        data:
+          drmonToken: "{{ content.json.token }}"

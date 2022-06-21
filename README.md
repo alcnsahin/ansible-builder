@@ -27,3 +27,12 @@ awx.awx           21.0.0
 community.general 5.0.1  
 community.vmware  2.5.0  
 ```
+
+## Test the 'test_ee_image' Image
+```shell
+ansible-runner run --process-isolation demo -p test.yml --container-image test_ee_image:latest
+```
+
+
+
+

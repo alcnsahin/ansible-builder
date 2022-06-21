@@ -1,6 +1,7 @@
 ---
 collections:
-  - ansible.posix
-  - community.general
-  - awx.awx
-  - community.vmware
+  - name: azure.azcollection
+  - name: awx.awx
+  - name: community.vmware
+  - name: community.routeros
+  - name: community.hashi_vault

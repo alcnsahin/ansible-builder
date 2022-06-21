@@ -1,0 +1,1 @@
+{"event": "verbose", "uuid": "e1cd2faf-ac9a-4a1a-9c3b-27908bdb1da6", "counter": 2, "stdout": "denied: requested access to the resource is denied", "start_line": 1, "end_line": 2, "runner_ident": "f6925e1d-43b7-4420-bb94-a67535d84757", "created": "2022-05-31T15:23:14.154817"}

@@ -1,16 +1,43 @@
-# Ansible Builder
+# Ansible Execution Environment
 
+## Environments
 ```shell
-ansible-builder build --tag test_ee_image --container-runtime docker -v 3
-```
-__output:__
-```text
-.
-.
-.
-Use 'docker scan' to run Snyk tests against images to find vulnerabilities and learn how to fix them
+[ec2-user@ip ~]$ cat /etc/os-release 
+NAME="Red Hat Enterprise Linux"
+VERSION="8.6 (Ootpa)"
+ID="rhel"
+ID_LIKE="fedora"
+VERSION_ID="8.6"
+PLATFORM_ID="platform:el8"
+PRETTY_NAME="Red Hat Enterprise Linux 8.6 (Ootpa)"
+ANSI_COLOR="0;31"
+CPE_NAME="cpe:/o:redhat:enterprise_linux:8::baseos"
+HOME_URL="https://www.redhat.com/"
+DOCUMENTATION_URL="https://access.redhat.com/documentation/red_hat_enterprise_linux/8/"
+BUG_REPORT_URL="https://bugzilla.redhat.com/"
 
-Complete! The build context can be found at: /Users/***/workspace/pycharm/ansible-builder/context
+REDHAT_BUGZILLA_PRODUCT="Red Hat Enterprise Linux 8"
+REDHAT_BUGZILLA_PRODUCT_VERSION=8.6
+REDHAT_SUPPORT_PRODUCT="Red Hat Enterprise Linux"
+REDHAT_SUPPORT_PRODUCT_VERSION="8.6"
+
+[ec2-user@ip test]$ pip --version
+pip 19.3.1 from /home/ec2-user/test/builder/lib64/python3.8/site-packages/pip (python 3.8)
+```
+
+## Installation
+```shell
+mkdir ~/ansible-builder && cd ~/ansible-builder
+python -m venv builder
+source builder/bin/activate
+pip3.8 install ansible
+pip3.8 install ansible-builder
+pip3.8 install ansible-runner
+```
+
+## Build
+```shell
+podman build -f context/Containerfile -t vmware-ee-image context
 ```
 
 ## List the collections

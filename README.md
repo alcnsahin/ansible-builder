@@ -86,6 +86,15 @@ cd demo/
 ansible-runner run --process-isolation . --container-volume-mount .:/runner/project --container-image vmware-ee-image:latest -p test.yml --cmdline "--extra-vars 'drmon_api=http://185.81.165.121:9989'"
 ```
 
+## Add the image to Ansible Automation Platform
 
+You can try the ee which I have already pushed to quay.io with the following instructions.
+
+```shell
+su - awx
+podman pull quay.io/alcnsahin/ansible-execution-environment
+podman image ls
+```
+After pulling, open the Automation platform and add a new execution environment with this image.
 
 

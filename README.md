@@ -79,10 +79,12 @@ vmware.vmware_rest      2.1.0
 vyos.vyos               2.6.0  
 ```
 
-## Test the 'test_ee_image' Image
+## Test the 'vmware-ee-image' Image
 ```shell
-ansible-runner run --process-isolation demo -p test.yml --container-image test_ee_image:latest
-cd demo/
+ansible-runner run --process-isolation demo -p test.yml --container-image vmware-ee-image:latest
+
+git clone <this-repo>
+cd ansible-execution-environment/demo
 ansible-runner run --process-isolation . --container-volume-mount .:/runner/project --container-image vmware-ee-image:latest -p test.yml --cmdline "--extra-vars 'drmon_api=http://185.81.165.121:9989'"
 ```
 
@@ -91,6 +93,7 @@ ansible-runner run --process-isolation . --container-volume-mount .:/runner/proj
 You can try the ee which I have already pushed to quay.io with the following instructions.
 
 ```shell
+# login to ansible automation platform server 
 su - awx
 podman pull quay.io/alcnsahin/ansible-execution-environment
 podman image ls
